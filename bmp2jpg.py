@@ -1,21 +1,3 @@
-"""
-BMP convert to JPG(在最高品質的前提下)
-
-key point:
-1. convert時要設定jpg的壓縮效率參數quality 為 100
-
-2. convert時要將色彩子採樣設定為4:4:4
-
-3. 壓縮比通常會在2:1 ~ 3:1之間(根據Huffman編碼和 DCT變換的效率而定)
-比如12MB的bmp image通常壓縮成jpg image後會變成6MB ~ 4MB之間
-但可能會根據圖片狀況有所不同，影響的可能包含:
-a. 影像中有大量相似顏色，DCT變換壓縮效率更好
-b. 影像本身就含有較多資料冗餘被Huffman編碼減少，使得壓縮效率更好
-
-code ref: https://chatgpt.com/share/67c66832-7c30-8005-bfdd-7f172ba0e481
-image transfer ref: https://chatgpt.com/share/67c66851-1eac-8005-8c27-6c954c5f9543
-
-"""
 import os
 from PIL import Image
 
